@@ -5,7 +5,7 @@ import {
   addValueAction,
   subtractValueAction,
   storeResultAction,
-  deleteResultAction
+  deleteResultAction,
 } from "./store/actions";
 
 const StyledHeader = styled.header`
@@ -31,6 +31,7 @@ const StyledButton = styled.button`
   width: 200px;
   height: 100px;
   margin: 40px;
+  border: 10px solid red;
 `;
 
 const Counter = ({
@@ -41,7 +42,7 @@ const Counter = ({
   onDecrementCounter,
   results,
   onStoreResult,
-  onDeleteResult
+  onDeleteResult,
 }) => {
   return (
     <>
@@ -52,9 +53,7 @@ const Counter = ({
         <StyledButton onClick={onIncrementCounter}>Increment</StyledButton>
         <StyledButton onClick={onDecrementCounter}>Decrement</StyledButton>
         <StyledButton onClick={() => onAddCounter(10)}>Add 10</StyledButton>
-        <StyledButton onClick={() => onSubtractCounter(5)}>
-          Subtract 5
-        </StyledButton>
+        <StyledButton onClick={() => onSubtractCounter(5)}>Subtract 5</StyledButton>
       </StyledButtonWrapper>
       <hr />
       <button onClick={() => onStoreResult(counter)}>Store Result</button>
@@ -73,7 +72,7 @@ const Counter = ({
 
 const mapStateToProps = (state) => ({
   counter: state.ctr.counter,
-  results: state.res.results
+  results: state.res.results,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -82,7 +81,7 @@ const mapDispatchToProps = (dispatch) => ({
   onSubtractCounter: (value) => dispatch(subtractValueAction(value)),
   onAddCounter: (value) => dispatch(addValueAction(value)),
   onStoreResult: (result) => dispatch(storeResultAction(result)),
-  onDeleteResult: (id) => dispatch(deleteResultAction(id))
+  onDeleteResult: (id) => dispatch(deleteResultAction(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

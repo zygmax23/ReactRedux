@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   width: 200px;
   height: 100px;
   margin: 40px;
-  border: 10px solid red;
+  border: 20px solid red;
 `;
 
 const Counter = ({

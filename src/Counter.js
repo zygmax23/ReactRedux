@@ -25,6 +25,7 @@ const StyledCounter = styled.h1`
 const StyledButtonWrapper = styled.div`
   padding: 30px;
   display: flex;
+  background-color: orange;
 `;
 
 const StyledButton = styled.button`

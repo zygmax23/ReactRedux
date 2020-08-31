@@ -31,8 +31,8 @@ const StyledButtonWrapper = styled.div`
 const StyledButton = styled.button`
   width: 200px;
   height: 100px;
-  margin: 40px;
-  border: 20px solid red;
+  margin: 10px;
+  border: none;
 `;
 
 const Counter = ({
